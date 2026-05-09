@@ -36,11 +36,11 @@ cd fyf
 
 2. Create a PostgreSQL database
 ```sql
-CREATE DATABASE fyf;
+CREATE DATABASE {whatever you want};
 ```
 
-3. Create `src/main/resources/application-local.yml` (this file is gitignored):
-```yaml
+3. Make sure to add these into your enviorment variables:
+```env var
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/fyf
@@ -51,6 +51,14 @@ jwt:
   secret: your-base64-encoded-secret-here
   expiration: 86400000
 ```
+## Environment Variables
+
+| Variable | Description |
+|---|---|
+| `JWT_SECRET` | Base64 encoded secret key for signing JWT tokens |
+| `DB_URL` | PostgreSQL connection URL |
+| `DB_USERNAME` | PostgreSQL username |
+| `DB_PASSWORD` | PostgreSQL password |
 
 4. Generate a JWT secret:
 ```bash
@@ -63,17 +71,6 @@ mvn spring-boot:run
 ```
 
 Flyway will automatically run all migrations and seed data on startup.
-
----
-
-## Environment Variables
-
-| Variable | Description |
-|---|---|
-| `JWT_SECRET` | Base64 encoded secret key for signing JWT tokens |
-| `DB_URL` | PostgreSQL connection URL |
-| `DB_USERNAME` | PostgreSQL username |
-| `DB_PASSWORD` | PostgreSQL password |
 
 For local development these are set in `application-local.yml`. For production set them as environment variables on your hosting platform.
 
