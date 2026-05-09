@@ -72,8 +72,6 @@ mvn spring-boot:run
 
 Flyway will automatically run all migrations and seed data on startup.
 
-For local development these are set in `application-local.yml`. For production set them as environment variables on your hosting platform.
-
 ---
 
 ## Authentication
