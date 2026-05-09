@@ -66,9 +66,7 @@ openssl rand -base64 32
 ```
 
 5. Run the application:
-```bash
-mvn spring-boot:run
-```
+Edit the configuration in the top right, adding the env vars listed above.  
 
 Flyway will automatically run all migrations and seed data on startup.
 
