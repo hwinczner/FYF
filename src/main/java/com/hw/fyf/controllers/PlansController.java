@@ -20,7 +20,7 @@ public class PlansController {
     private final PlanService planService;
 
     @GetMapping
-    public List<Plan> getPlans(){
+    public List<Plan> findAllPlans(){
         return planService.getPlans();
     }
 
